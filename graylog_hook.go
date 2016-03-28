@@ -81,7 +81,9 @@ func (hook *GraylogHook) Fire(entry *logrus.Entry) error {
 	gEntry := graylogEntry{entry, file, line}
 	hook.wg.Add(1)
 	hook.buf <- gEntry
-	hook.Flush()
+	if (hook.synchronous) {
+		hook.Flush()
+	}
 	return nil
 }
 
