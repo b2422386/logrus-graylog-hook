@@ -176,7 +176,6 @@ func (hook *GraylogHook) Levels() []logrus.Level {
 		logrus.ErrorLevel,
 		logrus.WarnLevel,
 		logrus.InfoLevel,
-		logrus.DebugLevel,
 	}
 }
 
